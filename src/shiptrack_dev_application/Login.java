@@ -130,11 +130,11 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String sql = "select * from user where username = ? and password = ?";
+        String sql = "select * from users where username = ? and password = ?";
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ShpTrk", "root", "");
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, jTextField1.getText());
             pstmt.setString(2, new String(jPasswordField1.getPassword()));
@@ -148,7 +148,13 @@ public class Login extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(null, " Unsuccessful Username / Password " + jTextField1.getText(), "Unsuccessful Login", JOptionPane.ERROR_MESSAGE);
                 }
+                
+                //This will clear the field and make way for new inputs
+                 jTextField1.setText("");
+                 jPasswordField1.setText("");
                 conn.close();
+                
+                
         }
         catch(Exception e)
         {

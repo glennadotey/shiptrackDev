@@ -41,6 +41,7 @@ public class Registration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGrpGender = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -146,10 +147,13 @@ public class Registration extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
         jLabel14.setText("Gender");
 
+        btnGrpGender.add(jRadioButton1);
         jRadioButton1.setText("Male");
 
+        btnGrpGender.add(jRadioButton2);
         jRadioButton2.setText("Female");
 
+        btnGrpGender.add(jRadioButton3);
         jRadioButton3.setText("Other");
 
         jLabel15.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
@@ -517,6 +521,7 @@ public class Registration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btnGrpGender;
     private java.awt.Checkbox checkbox2;
     private java.awt.Checkbox checkbox3;
     private javax.swing.JButton jButton1;

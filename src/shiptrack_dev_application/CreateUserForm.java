@@ -256,11 +256,11 @@ public class CreateUserForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String sql = "insert into user (name,street,city,state,zip,email,phone,username,password,confirm) value (?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into users (name,street,city,state,zip,email,phone,username,password,confirm) value (?,?,?,?,?,?,?,?,?,?)";
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ShpTrk", "root", "");
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, name.getText());
             pstmt.setString(2, txtStreet.getText());
@@ -276,7 +276,7 @@ public class CreateUserForm extends javax.swing.JFrame {
             //This Code will check and validate if your email filed was correctly populated
             if (!(Pattern.matches("^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$", txtEmail.getText()))) 
 {
-            JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please enter a valid email address", "Error", JOptionPane.ERROR_MESSAGE);
 
             }
             else
