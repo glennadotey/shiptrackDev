@@ -27,30 +27,40 @@
                       <Component id="label1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="label3" min="-2" max="-2" attributes="0"/>
-                          <Component id="label2" min="-2" max="-2" attributes="0"/>
-                          <Component id="label4" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="label5" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label5" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="label4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="rno" min="-2" pref="118" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cse" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="ise" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="ec" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="sem" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="button1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="button2" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="name" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="button1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="button2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cse" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="ise" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="ec" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -75,23 +85,21 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="name" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="label3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label4" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cse" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ise" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ec" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cse" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ise" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ec" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label4" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label5" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="sem" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="label5" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -136,15 +144,15 @@
         <Property name="text" type="java.lang.String" value="Department"/>
       </Properties>
     </Component>
+    <Component class="java.awt.TextField" name="rno">
+    </Component>
     <Component class="java.awt.Label" name="label5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Semeter"/>
+        <Property name="text" type="java.lang.String" value="Semester"/>
       </Properties>
-    </Component>
-    <Component class="java.awt.TextField" name="rno">
     </Component>
     <Component class="java.awt.TextField" name="name">
     </Component>
