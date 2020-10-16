@@ -6,6 +6,8 @@
 package shiptrack_dev_application;
 
 import java.sql.Connection;
+import java.io.File;
+import javax.swing.JFileChooser;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -52,9 +54,8 @@ public class receiveit extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         txtSenderAddStreet = new javax.swing.JTextField();
         txtSenderAddCity = new javax.swing.JTextField();
-        txtSenderAddState = new javax.swing.JTextField();
-        txtSenderAddZip = new javax.swing.JTextField();
         txtSenderAddState1 = new javax.swing.JTextField();
+        button1 = new java.awt.Button();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -92,15 +93,22 @@ public class receiveit extends javax.swing.JPanel {
 
         jLabel7.setText("Address");
 
-        txtSenderAddState.addActionListener(new java.awt.event.ActionListener() {
+        txtSenderAddCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenderAddStateActionPerformed(evt);
+                txtSenderAddCityActionPerformed(evt);
             }
         });
 
         txtSenderAddState1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSenderAddState1ActionPerformed(evt);
+            }
+        });
+
+        button1.setLabel("Upload / Add");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
             }
         });
 
@@ -121,26 +129,21 @@ public class receiveit extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtSenderName)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtSenderAddStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtSenderAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtSenderAddState, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtSenderAddZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtSenderAddStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtSenderAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 15, Short.MAX_VALUE))
                             .addComponent(txtSenderPhone)
                             .addComponent(txtSenderEmail))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSenderAddState1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5)
                             .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSenderAddState1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -163,17 +166,15 @@ public class receiveit extends javax.swing.JPanel {
                     .addComponent(txtSenderAddStreet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(txtSenderAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSenderAddState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSenderAddZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtSenderAddState1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jLabel6)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Receiver's  Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 14))); // NOI18N
@@ -246,7 +247,7 @@ public class receiveit extends javax.swing.JPanel {
                     .addComponent(txtReceAddStreet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(txtReceAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Submit.setActionCommand("Submit");
@@ -291,9 +292,9 @@ public class receiveit extends javax.swing.JPanel {
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -336,40 +337,6 @@ public class receiveit extends javax.swing.JPanel {
         
     }//GEN-LAST:event_txtSenderNameActionPerformed
 
-    private void txtSenderAddStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderAddStateActionPerformed
-        // TODO add your handling code here:
-        
-           String rname =txtReceName.getText();
-           String raddress =txtReceAddStreet.getText();
-           String rphone =txtRecePhone.getText();
-           String remail = txtReceEmail.getText();
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con1 = DriverManager.getConnection("jdbc:mysql://localhost/skptrk","root","");
-            insert = con1.prepareStatement("insert into shipit (rname,raddress,rphone,remail)values(?,?,?)");
-            insert.setString(1,rname);
-            insert.setString(2,raddress);
-            insert.setString(3,rphone);
-            insert.setString(4,remail);
-            insert.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Record Saved");
-            
-            
-            txtReceName.setText("");
-            txtReceAddStreet.setText("");
-            txtRecePhone.setText("");
-            txtReceEmail.setText("");
-            
-            
-          
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(crud.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(crud.class.getName()).log(Level.SEVERE, null, ex);
-        }  
-    }//GEN-LAST:event_txtSenderAddStateActionPerformed
-
     private void txtReceNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtReceNameActionPerformed
@@ -385,6 +352,18 @@ public class receiveit extends javax.swing.JPanel {
     private void txtSenderAddState1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderAddState1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenderAddState1ActionPerformed
+
+    private void txtSenderAddCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderAddCityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenderAddCityActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser=new JFileChooser();
+        chooser.showOpenDialog(null);
+        File fil = chooser.getSelectedFile();
+        
+    }//GEN-LAST:event_button1ActionPerformed
 
 
     
@@ -425,6 +404,7 @@ public class receiveit extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Submit;
+    private java.awt.Button button1;
     private java.awt.Button button2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -445,10 +425,8 @@ public class receiveit extends javax.swing.JPanel {
     private javax.swing.JTextField txtReceName;
     private javax.swing.JTextField txtRecePhone;
     private javax.swing.JTextField txtSenderAddCity;
-    private javax.swing.JTextField txtSenderAddState;
     private javax.swing.JTextField txtSenderAddState1;
     private javax.swing.JTextField txtSenderAddStreet;
-    private javax.swing.JTextField txtSenderAddZip;
     private javax.swing.JTextField txtSenderEmail;
     private transient javax.swing.JTextField txtSenderName;
     private javax.swing.JTextField txtSenderPhone;
